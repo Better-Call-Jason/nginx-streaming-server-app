@@ -34,22 +34,22 @@ Follow the steps below to set up your own streaming server.
 SSH into your instance and let's begin setting up your streaming server
 
 - update instance  
-    `sudo apt update`  
-    `sudo apt upgrade`
+    ```sudo apt update```  <br />
+    ```sudo apt upgrade``` <br />
 - install nginx - server application  
-    `sudo apt install nginx`  
+    ```sudo apt install nginx```<br />  
     check status  
-    `systemctl status nginx`  
+    ```systemctl status nginx````  
     `ctl + c` to exit  
     If Nginx is running correctly, you would see a green Active status.
 - install nginx rmtp module  
-    `sudo apt install libnginx-mod-rtmp`
+    ```sudo apt install libnginx-mod-rtmp```
 - restart nginx   
-    `sudo systemctl restart nginx`  
-    `systemctl status nginx`  
+    ```sudo systemctl restart nginx```
+    ```systemctl status nginx```  
     `ctl + c` to exit
 - configure nginx to receive stream  
-    `sudo nano /etc/nginx/nginx.conf`  
+    ```sudo nano /etc/nginx/nginx.conf```  
 - copy and insert this code below at the bottom of the page, it creates your receiver, after click `ctl` + `s` and then `ctl` + `x`<br />
 
 ```
