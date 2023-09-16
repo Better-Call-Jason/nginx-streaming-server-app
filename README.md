@@ -372,7 +372,7 @@ This restarts the service and you are now ready to broadcast your live stream.
       
     `sudo tcpdump -i any port 1935`<br />
   
-  press  `ctl` + `c` to exit the stream <br />
+  press  `ctl` + `c` to exit the stream
 
 ## <a name='secure'></a>Secure Your Stream
 
