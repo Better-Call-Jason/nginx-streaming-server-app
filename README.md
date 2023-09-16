@@ -6,15 +6,18 @@ Follow the steps below to set up your own streaming server.
 
 ## Table of Contents
 
-1. [Getting Started](#Prerequisites)
-2. [Set Up](#Installation)
-3. [Build Your Receiver](#receiver)
-4. [Build Your Broadcaster](#broadcaster)
-5. [Add Security](#ssl)
-6. [Configure OBS](#obs)
-7. [Configure Analytics and Firewall](#tcpdump)
+1. [About](#about)
+2. [Getting Started](#Prerequisites)
+3. [Set Up](#Installation)
+4. [Build Your Receiver](#receiver)
+5. [Build Your Broadcaster](#broadcaster)
+6. [Add SSL](#ssl)
+7. [Configure OBS](#obs)
+8. [Configure Analytics and Firewall](#tcpdump)
 9. [Build Your Viewer](#viewer)
-10. [Donate](#Donate)
+10. [Go Live](#final)
+11. [Keep Your Stream Secure](#secure)
+12. [Donate](#Donate)
 
 ## <a name='Prerequisites'></a>Getting Started
 
@@ -172,6 +175,7 @@ Now, let's set up your OBS software to broadcast to your receiver
     
 - set your stream key, that will be needed later.  
     `YOUR_STREAM_KEY`
+      - FYI you will need your stream key to be used in building the viewer
     
 - Click on `Apply` and then `OK`.
 
@@ -192,10 +196,14 @@ TCP Dump allows us to do some checks on the live stream when it is broadcasting 
 
 Now, let's set up your front page lobby so that surfers can visit your website and listen to or watch your live stream. I designed the front end code to be stylish and responsive, functional on both desktop and mobile browsers. There's a lot going on so I won't waste your time to discuss it. Big thanks to PicoCSS for amazing semantic CSS which is what is used to style the front end. Also using VideoJS, a free video player that handles HLS streams. Don't worry if you don't understand what I just said, just copy and paste and you'll have an amazing lobby for your surfers to visit.
 
+- You'll Need `YOUR_STREAM_KEY` and `YOUR_DOMAIN_NAME`<br />
+    - only replace the key and domain but keep the `/hls/` and `.m3u8`
+      `https://YOUR_DOMAIN_NAME/hls/YOUR_STREAM_KEY.m3u8`
+
 - paste this code to create the viewer page and open it  
     `sudo nano /var/www/html/stream.html`
     
-- copy this code and paste it in the nano editor
+- copy this code and paste it in the nano editor, make the changes to add your stream key and domain name. It has to be done twice. One for the audio and one for the video.
 
 ```
 <!DOCTYPE html>
@@ -283,7 +291,7 @@ Now, let's set up your front page lobby so that surfers can visit your website a
                        controls
                        preload='auto'
                        data-setup='{}'>
-                    <source src="https://live.bcj.one/hls/streamkey.m3u8" type="application/x-mpegURL">
+                    <source src="https://YOUR_DOMAIN_NAME/hls/YOUR_STREAM_KEY.m3u8" type="application/x-mpegURL">
                 </video>
             </div>
         </div>
@@ -301,7 +309,7 @@ Now, let's set up your front page lobby so that surfers can visit your website a
                         controls
                         preload="auto"
                 >
-                    <source src="https://live.bcj.one/hls/streamkey.m3u8" type="application/x-mpegURL">
+                    <source src="https://YOUR_DOMAIN_NAME/hls/YOUR_STREAM_KEY.m3u8" type="application/x-mpegURL">
                 </audio>
             </div>
 
@@ -348,6 +356,62 @@ Now, let's set up your front page lobby so that surfers can visit your website a
 - after pasting click `ctl` + `s` and then `ctl` + `x`<br />
 
 - Now create your livestream and try it out!
+
+## <a name='final'></a>Go Live
+
+The last thing to do is to test the configurations. If the response says ok, then you are all set. If you run into an issue look at the errors and try to figure it out. If you need help, please reach out. Most times, errors at this stage are typos or code syntax errors. Enter the two commands below
+
+`sudo nginx -t`  <br />
+
+if everything is good and the status is okay then :<br />
+
+`sudo systemctl restart nginx` <br />
+
+This restarts the service and you are now ready to broadcast your live stream. 
+
+## <a name='secure'></a>Secure Your Stream
+
+Prevent anyone else from broadcasting to your server by making the following changes. Only deploy these changes once you have fully tested and determined the system is working as intended. 
+
+- configure nginx to receive only the stream from your ip address. Get your real IP and enter it in the provided code. You cannot broadcast from behind a VPN. The entire streaming server is a VPN on its own.<br /> 
+    ```sudo nano /etc/nginx/nginx.conf```  
+- copy and insert this code below with the changes at the bottom of the page. Make sure to replace `YOUR_LOCAL_IP_ADDRESS` with your real IP address<br />
+
+```
+rtmp {
+    server {
+        listen 1935;
+        chunk_size 4096;
+
+        application live {
+            live on;
+            record off;
+            allow publish YOUR_LOCAL_IP_ADDRESS;
+            deny publish all;
+
+            # Setup HLS
+            hls on;
+            hls_path /mnt/hls/;
+            hls_fragment 3;
+            hls_playlist_length 60;
+            #deny play all;
+            allow play all;
+        }
+    }
+}
+```
+- after pasting click `ctl` + `s` and then `ctl` + `x`<br />
+
+- now one more time let's test our configs:
+  
+`sudo nginx -t`  <br />
+
+if everything is good and the status is okay then :<br />
+
+`sudo systemctl restart nginx` <br />
+
+This restarts the service and you are now ready to broadcast your live stream and you are the only one that can stream to your server now. 
+
 
 ## <a name='Donate'></a>Donate
 
