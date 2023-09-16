@@ -8,8 +8,10 @@ Follow the steps below to set up your own streaming server.
 
 1. [Getting Started](#Prerequisites)
 2. [Set Up](#Installation)
-3. [Code Examples](#Code)
-4. [Donate](#Donate)
+3. [Build Your Receiver](#receiver)
+4. [Build Your Broadcaster](#broadcaster)
+5. [Build Your Viewer](#viewer)
+6. [Donate](#Donate)
 
 ## <a name='Prerequisites'></a>Getting Started
 
@@ -48,9 +50,14 @@ SSH into your instance and let's begin setting up your streaming server
     ```sudo systemctl restart nginx```<br />
     ```systemctl status nginx```  <br />
     `ctl + c` to exit
+
+## <a name='receiver'></a>Build Your Receiver
+
+Now, let's set up your receiver so your server can receive your live stream signal. 
+
 - configure nginx to receive stream  
     ```sudo nano /etc/nginx/nginx.conf```  
-- copy and insert this code below at the bottom of the page, it creates your receiver, after click `ctl` + `s` and then `ctl` + `x`<br />
+- copy and insert this code below at the bottom of the page<br />
 
 ```
 rtmp {
@@ -75,6 +82,7 @@ rtmp {
     }
 }
 ```
+- after pasting click `ctl` + `s` and then `ctl` + `x`<br />
 
 ```
 git clone https://github.com/username/project.git
