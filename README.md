@@ -2,7 +2,7 @@
 
 Follow the steps below to set up your own streaming server. 
 
-![alt text](https://github.com/username/project/blob/master/img.png?raw=true)
+![alt text](https://github.com/Better-Call-Jason/nginx-streaming-server-app/blob/main/episode1-thumbnail2.png?raw=true)
 
 ## Table of Contents
 
