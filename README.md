@@ -19,7 +19,7 @@ Follow the steps below to set up your own streaming server.
     -create linode account : https://www.linode.com  
     -create aws account : https://aws.amazon.com
 - access your cloud account <br />
-    -linode account : https://cloud.linode.com/linodes
+    -linode account : https://cloud.linode.com/linodes<br />
     -aws/lightsail : https://lightsail.aws.amazon.com/ls/webapp/home/instances
 ## <a name='Installation'></a>Installation
 
