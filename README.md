@@ -86,21 +86,13 @@ rtmp {
 ```
 - after pasting click `ctl` + `s` and then `ctl` + `x`<br />
 
-```
-git clone https://github.com/username/project.git
-cd project
-npm install
-```
+## <a name='broadcaster'></a>Build Your Broadcaster
 
-## <a name='Code'></a> Code Examples
+Now, let's set up your broadcaster so your server can beam your live stream signal to surfers on your website. 
 
-Here's an example of some code used in this project:
+## <a name='viewer'></a>Build Your Viewer
 
-```javascript
-function() {
-  console.log("Hello, World!");
-}
-```
+Now, let's set up your front page lobby so that surfers can visit your website and listen to or watch your live stream
 
 ## <a name='Donate'></a>Donate
 
