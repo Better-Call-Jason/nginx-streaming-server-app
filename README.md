@@ -13,14 +13,14 @@ Follow the steps below to set up your own streaming server.
 
 ## <a name='Prerequisites'></a>Getting Started
 
-1. Download and install OBS : https://obsproject.com
-2. Purchase a domain : https://domains.squarespace.com
-3. Create a cloud computing account (here are some options) <br>
-    1.create linode account : https://www.linode.com  
-    2.create aws account : https://aws.amazon.com
-5. Access your cloud account 
-    1. linode account : https://cloud.linode.com/linodes
-    2. aws/lightsail : https://lightsail.aws.amazon.com/ls/webapp/home/instances
+- download obs : https://obsproject.com
+- purchase domain : https://domains.squarespace.com
+- create a cloud account  
+    1. create linode account : https://www.linode.com  
+    2. create aws account : https://aws.amazon.com
+- access your cloud account
+    1.  linode account : https://cloud.linode.com/linodes
+    2.  aws/lightsail : https://lightsail.aws.amazon.com/ls/webapp/home/instances
 
 ## <a name='Installation'></a>Installation
 
