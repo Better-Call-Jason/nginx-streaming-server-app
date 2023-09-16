@@ -31,10 +31,11 @@ Follow the steps below to set up your own streaming server.
     - linode account : https://cloud.linode.com/linodes<br />
     - aws/lightsail : https://lightsail.aws.amazon.com/ls/webapp/home/instances<br />
     - create your instance with  `ubuntu 20.04`<br />
+    - Hate cloud computers? This entire project can exist on a Rasberry PI 4B <br />
 - point your domain to your created instance's ip
     - navigate to your domain dns
     - create an A record
-    - enter a subdomain or leave blank
+    - enter a subdomain or leave blank or @
     - address - enter instance ip address
     - TTL - 60 seconds or minimum
   
