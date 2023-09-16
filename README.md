@@ -50,9 +50,9 @@ SSH into your instance and let's begin setting up your streaming server
     `ctl + c` to exit
 - configure nginx to receive stream  
     `sudo nano /etc/nginx/nginx.conf`  
-    insert this code at the bottom, it creates your receiver, after click `ctl` + `s` and then `ctl` + `x`
+     - copy and insert this code below at the bottom of the page, it creates your receiver, after click `ctl` + `s` and then `ctl` + `x`<br />
 
-  ```
+```
 rtmp {
     server {
         listen 1935;
