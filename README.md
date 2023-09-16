@@ -1,4 +1,4 @@
-# Own Your Stream --- Toolkit For Online Freedom
+# Own Your Stream --- Toolkit For Online Freedom Episode 1
 
 Follow the steps below to set up your own streaming server. 
 
@@ -10,8 +10,10 @@ Follow the steps below to set up your own streaming server.
 2. [Set Up](#Installation)
 3. [Build Your Receiver](#receiver)
 4. [Build Your Broadcaster](#broadcaster)
-5. [Build Your Viewer](#viewer)
-6. [Donate](#Donate)
+5. [Add Security](#ssl)
+6. [Configure OBS](#obs)
+7. [Build Your Viewer](#viewer)
+8. [Donate](#Donate)
 
 ## <a name='Prerequisites'></a>Getting Started
 
@@ -89,6 +91,86 @@ rtmp {
 ## <a name='broadcaster'></a>Build Your Broadcaster
 
 Now, let's set up your broadcaster so your server can beam your live stream signal to surfers on your website. 
+
+- configure nginx to broadcast the stream  
+    `sudo nano /etc/nginx/sites-available/default`
+
+delete all existing code and paste the code below :
+
+```bash
+server {
+
+      listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+    index index.html;
+
+    server_name your domain name;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ ^/live/?$ {
+        rewrite ^/live/?$ /stream.html break;
+    }
+
+    location /hls {
+        types {
+          application/vnd.apple.mpegurl m3u8;
+          video/mp2t ts;
+     }
+     alias /mnt/hls/;
+     expires -1;
+     add_header 'Cache-Control' 'no-cache';
+     }
+ }
+```
+## <a name='ssl'></a>Add Security
+
+Now, let's set up the security of your server and application. These next steps require that you've purchased a domain and followed the steps to set up an A record. It can take a while for this to work. So if it fails, give it some time before trying again.
+
+- install certbot and let's encrypt  
+    `sudo apt-get install certbot python3-certbot-nginx`
+    
+- create the ssl for your domain  
+    `sudo certbot --nginx -d your domain name`
+    
+- automate the renewal of your domain ssl  
+    `sudo certbot renew --dry-run`
+    
+   - add a cron job to manage the renewal  
+    `sudo crontab -e`
+    
+   - enter this line at the bottom and save and exit  
+    `0 12 */10 * * /usr/bin/certbot renew --quiet`
+    
+   - see active scheduled cron jobs  
+    `sudo crontab -l`
+- recheck nginx after certbot completes  
+`sudo nano /etc/nginx/sites-available/default`
+
+should see changes and 443 code added
+
+## <a name='obs'></a>Configure OBS
+
+Now, let's set up your OBS software to broadcast to your receiver
+
+- Open OBS Studio on your PC or Mac.
+    
+- Click on `Settings` in the bottom right of the OBS Studio window.
+    
+- In the settings panel, click on `Stream`.
+    
+- Here, under `Service`, select `Custom...`.
+    
+- In the `Server` field, enter the RTMP URL of your Nginx server. The URL would be in the format: `rtmp://<Your_Server_IP>/live`.
+    
+- set your stream key, that will be needed later.  
+    `YOUR_STREAM_KEY`
+    
+- Click on `Apply` and then `OK`.
 
 ## <a name='viewer'></a>Build Your Viewer
 
