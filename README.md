@@ -351,8 +351,10 @@ Now, let's set up your front page lobby so that surfers can visit your website a
 
 ## <a name='Donate'></a>Donate
 
-If you found this project helpful and would like to contribute to its ongoing development, consider making a donation.
+This project was months in development. Once I had a working model that I tested repeatedly I spent weeks in tutorial preparation trying to make it as easy as possible for a novice or an expert to own their stream. While I make it all look very easy to do, there are a lot of complex things involved here. If my tutorial has helped you out. Please email me at everydayjason@protonmail.com and tell me about it. I can' wait to hear about your successes! And, please consider making a crypto donation below.
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](YOUR_PAYPAL_LINK)
+[![Donate Crypto]([https://img.shields.io/badge/Donate-PayPal-green.svg](https://nowpayments.io/images/embeds/donation-button-black.svg))]([YOUR_PAYPAL_LINK](https://nowpayments.io/donation?api_key=3JB4N4H-57MME28-GXQF9CK-G61YRXR&source=lk_donation&medium=referral))
 
 Thanks for your support!
+
+And remember as James Evan Pilato says `Don't Hate The Media, Become The Media!`
