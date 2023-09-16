@@ -50,8 +50,31 @@ SSH into your instance and let's begin setting up your streaming server
     `ctl + c` to exit
 - configure nginx to receive stream  
     `sudo nano /etc/nginx/nginx.conf`  
-    insert this code at the bottom  
-    this creates your receiver
+    insert this code at the bottom, it creates your receiver, after click `ctl` + `s` and then `ctl` + `x`
+
+  ```
+rtmp {
+    server {
+        listen 1935;
+        chunk_size 4096;
+
+        application live {
+            live on;
+            record off;
+            # allow publish YOUR_LOCAL_IP_ADDRESS;
+            # deny publish all;
+
+            # Setup HLS
+            hls on;
+            hls_path /mnt/hls/;
+            hls_fragment 3;
+            hls_playlist_length 60;
+            #deny play all;
+            allow play all;
+        }
+    }
+}
+```
 
 ```
 git clone https://github.com/username/project.git
