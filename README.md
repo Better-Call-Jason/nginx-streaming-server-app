@@ -16,11 +16,11 @@ Follow the steps below to set up your own streaming server.
 - download obs : https://obsproject.com
 - purchase domain : https://domains.squarespace.com
 - create cloud account  
-    -create linode account : https://www.linode.com  
-    -create aws account : https://aws.amazon.com
+    - create linode account : https://www.linode.com  
+    - create aws account : https://aws.amazon.com
 - access your cloud account <br />
-    -linode account : https://cloud.linode.com/linodes<br />
-    -aws/lightsail : https://lightsail.aws.amazon.com/ls/webapp/home/instances<br />
+    - linode account : https://cloud.linode.com/linodes<br />
+    - aws/lightsail : https://lightsail.aws.amazon.com/ls/webapp/home/instances<br />
     - create your instance with  `ubuntu 20.04`
   
 ## <a name='Installation'></a>Installation
