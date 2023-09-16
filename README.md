@@ -17,7 +17,7 @@ Follow the steps below to set up your own streaming server.
 9. [Build Your Viewer](#viewer)
 10. [Go Live](#final)
 11. [Keep Your Stream Secure](#secure)
-12. [Donate](#Donate)
+12. [Donate](#donate)
 
 ## <a name='Prerequisites'></a>Getting Started
 
@@ -100,8 +100,7 @@ Now, let's set up your broadcaster so your server can beam your live stream sign
     `sudo nano /etc/nginx/sites-available/default`
 
 delete all existing code and paste the code below :
-
-```bash
+```
 server {
 
       listen 80 default_server;
@@ -373,7 +372,7 @@ This restarts the service and you are now ready to broadcast your live stream.
       
     `sudo tcpdump -i any port 1935`<br />
   
-  press  `ctl` + `c` to exit the stream <br/ >
+  press  `ctl` + `c` to exit the stream <br />
 
 ## <a name='secure'></a>Secure Your Stream
 
@@ -419,7 +418,7 @@ if everything is good and the status is okay then :<br />
 This restarts the service and you are now ready to broadcast your live stream and you are the only one that can stream to your server now. 
 
 
-## <a name='Donate'></a>Donate
+## <a name='donate'></a>Donate
 
 This project was months in development. Once I had a working model that I tested repeatedly I spent weeks in tutorial preparation trying to make it as easy as possible for a novice or an expert to own their stream. While I make it all look very easy to do, there are a lot of complex things involved here. If my tutorial has helped you out. Please email me at everydayjason@protonmail.com and tell me about it. I can' wait to hear about your successes! And, please consider making a crypto donation below.
 
