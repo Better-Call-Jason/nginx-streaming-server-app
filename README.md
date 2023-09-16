@@ -20,7 +20,9 @@ Follow the steps below to set up your own streaming server.
     -create aws account : https://aws.amazon.com
 - access your cloud account <br />
     -linode account : https://cloud.linode.com/linodes<br />
-    -aws/lightsail : https://lightsail.aws.amazon.com/ls/webapp/home/instances
+    -aws/lightsail : https://lightsail.aws.amazon.com/ls/webapp/home/instances<br />
+    - create your instance with  `ubuntu 20.04`
+  
 ## <a name='Installation'></a>Installation
 
 To install this project, follow these steps...
