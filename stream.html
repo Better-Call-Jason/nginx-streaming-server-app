@@ -1,0 +1,148 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Streaming Server || Better Call Jason</title>
+    <meta name="author" content="Jason Nobles">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+
+        @media only screen and (min-width: 992px) {
+            article {
+                width: 800px;
+                margin: auto;
+            }
+            video {
+                width: 700px;
+                height: 450px;
+            }
+            audio {
+                width: 700px;
+            }
+
+        }
+
+        body > main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 7rem);
+            padding: 1em;
+        }
+
+        article {
+            overflow: hidden;
+            text-align: center;
+        }
+
+
+        @media only screen and (max-width: 768px) {
+
+            video {
+                width: 100%;
+                height: auto;
+            }
+            audio {
+                width: 100%;
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<main>
+
+    <nav>
+        <ul>
+            <li></li>
+        </ul>
+        <ul>
+            <li><strong>bcj.one/live</strong></li>
+        </ul>
+        <ul>
+            <li></li>
+        </ul>
+    </nav>
+
+    <article>
+        <div>
+            <hgroup>
+                <h1>My Streaming Server</h1>
+                <h2>Video</h2>
+            </hgroup>
+            <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
+            <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
+            <div data-vjs-player>
+                <video id="my_video_1"
+                       class="video-js vjs-default-skin vjs-fluid vjs-16-9 vjs-big-play-centered"
+                       controls
+                       preload='auto'
+                       data-setup='{}'>
+                    <source src="https://YOUR_DOMAIN_NAME/hls/YOUR_STREAM_KEY.m3u8" type="application/x-mpegURL">
+                </video>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div>
+            <hgroup>
+
+                <h2>Audio</h2>
+            </hgroup>
+            <div data-vjs-player>
+                <audio
+                        id="my_audio_1"
+                        class="video-js vjs-default-skin vjs-fluid"
+                        controls
+                        preload="auto"
+                >
+                    <source src="https://YOUR_DOMAIN_NAME/hls/YOUR_STREAM_KEY.m3u8" type="application/x-mpegURL">
+                </audio>
+            </div>
+
+        </div>
+    </article>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/videojs-contrib-hls.js@latest"></script>
+<script>
+    var player = videojs('my_video_1');
+    player.play();
+
+    var player2 = videojs('my_audio_1');
+    player2.play();
+</script>
+<script>
+    const themeApplier = {
+        // Config
+        darkScheme: "dark",
+        rootAttribute: "data-theme",
+
+        // Init
+        init() {
+            this.applyScheme();
+        },
+
+        // Apply dark scheme
+        applyScheme() {
+            document
+                .querySelector("html")
+                .setAttribute(this.rootAttribute, this.darkScheme);
+        },
+    };
+
+    // Init
+    themeApplier.init();
+</script>
+
+</body>
+
+</html>
+```
