@@ -197,7 +197,7 @@ TCP Dump allows us to do some checks on the live stream when it is broadcasting 
 Now, let's set up your front page lobby so that surfers can visit your website and listen to or watch your live stream. I designed the front end code to be stylish and responsive, functional on both desktop and mobile browsers. There's a lot going on so I won't waste your time to discuss it. Big thanks to PicoCSS for amazing semantic CSS which is what is used to style the front end. Also using VideoJS, a free video player that handles HLS streams. Don't worry if you don't understand what I just said, just copy and paste and you'll have an amazing lobby for your surfers to visit.
 
 - You'll Need `YOUR_STREAM_KEY` and `YOUR_DOMAIN_NAME`<br />
-    - only replace the key and domain but keep the `/hls/` and `.m3u8`
+    - only replace the key and domain but keep the `/hls/` and `.m3u8`<br />
       `https://YOUR_DOMAIN_NAME/hls/YOUR_STREAM_KEY.m3u8`
 
 - paste this code to create the viewer page and open it  
