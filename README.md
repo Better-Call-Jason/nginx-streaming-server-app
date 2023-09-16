@@ -1,17 +1,26 @@
-# My Project Title
+# Own Your Stream --- Toolkit For Online Freedom
 
-Welcome to my project. Here you'll find information, documentation, and code examples.
+Follow the steps below to set up your own streaming server. 
+
+![alt text](https://github.com/username/project/blob/master/img.png?raw=true)
 
 ## Table of Contents
 
-1. [About](#About)
+1. [Getting Started](#Prerequisites)
 2. [Installation](#Installation)
 3. [Code Examples](#Code)
 4. [Donate](#Donate)
 
-## <a name='About'></a>About
+## <a name='Prerequisites'></a>Getting Started
 
-This project is about...
+1. Download and install OBS : https://obsproject.com
+2. Purchase a domain : https://domains.squarespace.com
+3. Create cloud account  
+    1.create linode account : https://www.linode.com  
+    2.create aws account : https://aws.amazon.com
+4. Access your cloud account
+    1.  linode account : https://cloud.linode.com/linodes
+    2.  aws/lightsail : https://lightsail.aws.amazon.com/ls/webapp/home/instances
 
 ## <a name='Installation'></a>Installation
 
