@@ -369,6 +369,12 @@ if everything is good and the status is okay then :<br />
 
 This restarts the service and you are now ready to broadcast your live stream. 
 
+- for troubleshooting your stream use tcpdump to see the operation of the livestream. If you are receiving a stream to the server the command below will be overwhelmed with data, if just an empty screen then something is wrong with your set up.  
+      
+    `sudo tcpdump -i any port 1935`<br />
+  
+  press  `ctl` + `c` to exit the stream <br/ >
+
 ## <a name='secure'></a>Secure Your Stream
 
 Prevent anyone else from broadcasting to your server by making the following changes. Only deploy these changes once you have fully tested and determined the system is working as intended. 
