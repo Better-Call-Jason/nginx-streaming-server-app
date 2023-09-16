@@ -41,7 +41,7 @@ SSH into your instance and let's begin setting up your streaming server
     check status  
     ```systemctl status nginx```  
     `ctl + c` to exit  
-    If Nginx is running correctly, you would see a green Active status.
+    If Nginx is running correctly, you will see a green Active status.
 - install nginx rmtp module  
     ```sudo apt install libnginx-mod-rtmp```<br />
 - restart nginx   
