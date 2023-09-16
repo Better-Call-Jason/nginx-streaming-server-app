@@ -12,8 +12,9 @@ Follow the steps below to set up your own streaming server.
 4. [Build Your Broadcaster](#broadcaster)
 5. [Add Security](#ssl)
 6. [Configure OBS](#obs)
-7. [Build Your Viewer](#viewer)
-8. [Donate](#Donate)
+7. [Configure Analytics and Firewall](#tcpdump)
+9. [Build Your Viewer](#viewer)
+10. [Donate](#Donate)
 
 ## <a name='Prerequisites'></a>Getting Started
 
@@ -127,6 +128,8 @@ server {
      }
  }
 ```
+- after pasting click `ctl` + `s` and then `ctl` + `x`<br />
+
 ## <a name='ssl'></a>Add Security
 
 Now, let's set up the security of your server and application. These next steps require that you've purchased a domain and followed the steps to set up an A record. It can take a while for this to work. So if it fails, give it some time before trying again.
@@ -172,9 +175,179 @@ Now, let's set up your OBS software to broadcast to your receiver
     
 - Click on `Apply` and then `OK`.
 
+## <a name='tcpdump'></a>Configure Analytics and Firewall
+
+TCP Dump allows us to do some checks on the live stream when it is broadcasting which will allow troubleshooting if the need arise
+
+- install tcpdump to see the operation of the livestream  
+    `sudo apt-get install tcpdump`  
+    `sudo tcpdump -i any port 1935`
+    `ctl` + `c` to exit the stream
+    
+- open firewall port 1935 on lightsail it is closed, this is done in networking on the instance
+    
+- open firewall port 433 on lightsail it is closed, this is done in networking on the instance
+
 ## <a name='viewer'></a>Build Your Viewer
 
 Now, let's set up your front page lobby so that surfers can visit your website and listen to or watch your live stream
+
+- paste this code to create the viewer page and open it  
+    `sudo nano /var/www/html/stream.html`
+    
+- copy this code and paste it in the nano editor
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Streaming Server || Better Call Jason</title>
+    <meta name="author" content="Jason Nobles">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+
+        @media only screen and (min-width: 992px) {
+            article {
+                width: 800px;
+                margin: auto;
+            }
+            video {
+                width: 700px;
+                height: 450px;
+            }
+            audio {
+                width: 700px;
+            }
+
+        }
+
+        body > main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 7rem);
+            padding: 1em;
+        }
+
+        article {
+            overflow: hidden;
+            text-align: center;
+        }
+
+
+        @media only screen and (max-width: 768px) {
+
+            video {
+                width: 100%;
+                height: auto;
+            }
+            audio {
+                width: 100%;
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<main>
+
+    <nav>
+        <ul>
+            <li></li>
+        </ul>
+        <ul>
+            <li><strong>bcj.one/live</strong></li>
+        </ul>
+        <ul>
+            <li></li>
+        </ul>
+    </nav>
+
+    <article>
+        <div>
+            <hgroup>
+                <h1>My Streaming Server</h1>
+                <h2>Video</h2>
+            </hgroup>
+            <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
+            <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
+            <div data-vjs-player>
+                <video id="my_video_1"
+                       class="video-js vjs-default-skin vjs-fluid vjs-16-9 vjs-big-play-centered"
+                       controls
+                       preload='auto'
+                       data-setup='{}'>
+                    <source src="https://live.bcj.one/hls/streamkey.m3u8" type="application/x-mpegURL">
+                </video>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div>
+            <hgroup>
+
+                <h2>Audio</h2>
+            </hgroup>
+            <div data-vjs-player>
+                <audio
+                        id="my_audio_1"
+                        class="video-js vjs-default-skin vjs-fluid"
+                        controls
+                        preload="auto"
+                >
+                    <source src="https://live.bcj.one/hls/streamkey.m3u8" type="application/x-mpegURL">
+                </audio>
+            </div>
+
+        </div>
+    </article>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/videojs-contrib-hls.js@latest"></script>
+<script>
+    var player = videojs('my_video_1');
+    player.play();
+
+    var player2 = videojs('my_audio_1');
+    player2.play();
+</script>
+<script>
+    const themeApplier = {
+        // Config
+        darkScheme: "dark",
+        rootAttribute: "data-theme",
+
+        // Init
+        init() {
+            this.applyScheme();
+        },
+
+        // Apply dark scheme
+        applyScheme() {
+            document
+                .querySelector("html")
+                .setAttribute(this.rootAttribute, this.darkScheme);
+        },
+    };
+
+    // Init
+    themeApplier.init();
+</script>
+
+</body>
+
+</html>
+```
+- after pasting click `ctl` + `s` and then `ctl` + `x`<br />
+
+- Now create your livestream and try it out!
 
 ## <a name='Donate'></a>Donate
 
