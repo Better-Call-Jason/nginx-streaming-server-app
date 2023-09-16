@@ -18,6 +18,7 @@ Follow the steps below to set up your own streaming server.
 10. [Go Live](#final)
 11. [Keep Your Stream Secure](#secure)
 12. [Donate](#donate)
+13. [Parting Shot](#goodbye)
 
 ## <a name='Prerequisites'></a>Getting Started
 
@@ -420,13 +421,15 @@ This restarts the service and you are now ready to broadcast your live stream an
 
 ## <a name='donate'></a>Donate
 
-This project was months in development. Once I had a working model that I tested repeatedly I spent weeks in tutorial preparation trying to make it as easy as possible for a novice or an expert to own their stream. While I make it all look very easy to do, there are a lot of complex things involved here. If my tutorial has helped you out. Please email me at everydayjason@protonmail.com and tell me about it. I can' wait to hear about your successes! And, please consider making a crypto donation below.
+This project was months in development. Once I had a working model that I tested repeatedly I spent weeks in tutorial preparation trying to make it as easy as possible for a novice or an expert to own their own live stream server. While I make it all look very easy to do, there are a lot of complex things involved here. If my tutorial has helped you out, please email me at everydayjason@protonmail.com and tell me about it. I can't wait to hear about your successes! And, please consider making a BTC or LTC donation below.
 
 
 [![Donate Crypto](https://nowpayments.io/images/embeds/donation-button-white.svg "Donate Button")](https://nowpayments.io/donation?api_key=3JB4N4H-57MME28-GXQF9CK-G61YRXR&source=lk_donation&medium=referral)
 
 
 Thanks for your support!
+
+## <a name='goodbye'></a>Parting Shot
 
 And remember as James Evan Pilato says: <br /> 
 `Don't Hate The Media, Become The Media!`
