@@ -7,7 +7,7 @@ Follow the steps below to set up your own streaming server.
 ## Table of Contents
 
 1. [Getting Started](#Prerequisites)
-2. [Installation](#Installation)
+2. [Set Up](#Installation)
 3. [Code Examples](#Code)
 4. [Donate](#Donate)
 
@@ -29,9 +29,29 @@ Follow the steps below to set up your own streaming server.
     - address - enter instance ip address
     - TTL - 60 seconds or minimum
   
-## <a name='Installation'></a>Installation
+## <a name='Installation'></a>Set Up
 
-To install this project, follow these steps...
+SSH into your instance and let's begin setting up your streaming server
+
+- update instance  
+    `sudo apt update`  
+    `sudo apt upgrade`
+- install nginx - server application  
+    `sudo apt install nginx`  
+    check status  
+    `systemctl status nginx`  
+    `ctl + c` to exit  
+    If Nginx is running correctly, you would see a green Active status.
+- install nginx rmtp module  
+    `sudo apt install libnginx-mod-rtmp`
+- restart nginx   
+    `sudo systemctl restart nginx`  
+    `systemctl status nginx`  
+    `ctl + c` to exit
+- configure nginx to receive stream  
+    `sudo nano /etc/nginx/nginx.conf`  
+    insert this code at the bottom  
+    this creates your receiver
 
 ```
 git clone https://github.com/username/project.git
