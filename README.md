@@ -8,7 +8,7 @@ Follow the steps below to set up your own streaming server.
 
 1. [About](#about)
 2. [Getting Started](#Prerequisites)
-3. [Set Up](#Installation)
+3. [Set Up](#setup)
 4. [Build Your Receiver](#receiver)
 5. [Build Your Broadcaster](#broadcaster)
 6. [Add SSL](#ssl)
@@ -43,7 +43,7 @@ Hello, it is Jason. Thanks for dropping by. As a developer, I have directly seen
     - address - enter instance ip address
     - TTL - 60 seconds or minimum
   
-## <a name='Installation'></a>Set Up
+## <a name='setup'></a>Set Up
 
 SSH into your instance and let's begin setting up your streaming server, we'll first update the instance and then install our server application called NGINX
 
