@@ -20,6 +20,10 @@ Follow the steps below to set up your own streaming server.
 12. [Donate](#donate)
 13. [Parting Shot](#goodbye)
 
+## <a name='about'></a>About
+
+Hello, it is Jason. Thanks for dropping by. As a developer, I have directly seen the power that big tech has over our lives. In a very small way, I'd like to push back against that trend and dissent against their power over us. I am tired of seeing voices marginalized and cancelled by big tech at the behest of governments and corporate actors simply for having an opinion contrary to the experts and authorities. I think the world can handle a little disagreement and a little mis-information. Follow these steps below and you will be unstoppable by big tech.
+
 ## <a name='Prerequisites'></a>Getting Started
 
 - download obs : https://obsproject.com
