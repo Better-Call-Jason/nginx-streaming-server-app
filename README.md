@@ -22,7 +22,7 @@ Follow the steps below to set up your own streaming server.
 
 ## <a name='about'></a>About
 
-Hello, it is Jason. Thanks for dropping by. As a developer, I have directly seen the power that big tech has over our lives. In a very small way, I'd like to push back against that trend and dissent against their power over us. I am tired of seeing voices marginalized and cancelled by big tech at the behest of governments and corporate actors simply for having an opinion contrary to the experts and authorities. I think the world can handle a little disagreement and a little mis-information. Follow these steps below and you will be unstoppable by big tech.
+Hello, it is Jason. Thanks for dropping by. As a developer, I have directly seen the power that big tech has over our lives. In a very small way, I'd like to push back against that trend and dissent against their power over us. I am tired of seeing voices marginalized and cancelled by big tech at the behest of governments and corporate actors simply for having an opinion contrary to the experts and authorities. Here, I will show you how to create your own streaming server. While, I build this project on a very small cheap compute instance, this project is a fully scalable secure model that can be used on more powerful compute instances to broadcast your live stream content to thousands of followers similar to what Twitch, Youtube, Facebook and others provide. Follow these steps below and you will be unstoppable by big tech.
 
 ## <a name='Prerequisites'></a>Getting Started
 
@@ -426,7 +426,7 @@ This restarts the service and you are now ready to broadcast your live stream an
 
 ## <a name='donate'></a>Donate
 
-This project was months in development. Once I had a working model that I tested repeatedly I spent weeks in tutorial preparation trying to make it as easy as possible for a novice or an expert to own their own live stream server. While I make it all look very easy to do, there are a lot of complex things involved here. If my tutorial has helped you out, please email me at everydayjason@protonmail.com and tell me about it. I can't wait to hear about your successes! And, please consider making a BTC or LTC donation below.
+This project was months in development from the idea to full execution. Once I had a fully working model I tested it repeatedly on many different compute instances. I spent weeks in tutorial preparation trying to make it as easy as possible for a novice or an expert to own their own live stream server as conveniently as possible. While I make it all look very easy to do, there are a lot of complex things involved here. From the back end to the front end, everything is built to help you succeed. If my tutorial has helped you out, please email me at everydayjason@protonmail.com and tell me about it. I can't wait to hear about your successes! And, please consider making a BTC or LTC donation below.
 
 
 [![Donate Crypto](https://nowpayments.io/images/embeds/donation-button-white.svg "Donate Button")](https://nowpayments.io/donation?api_key=3JB4N4H-57MME28-GXQF9CK-G61YRXR&source=lk_donation&medium=referral)
